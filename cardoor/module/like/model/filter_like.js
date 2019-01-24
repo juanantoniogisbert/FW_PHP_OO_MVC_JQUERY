@@ -1,4 +1,5 @@
 $(document).ready(function () {
+    console.log("hola");
     var url = "module/like/controller/controller_like.php?op=datatable";  
     // prepare the data
     var source =
@@ -16,7 +17,6 @@ $(document).ready(function () {
     var dataAdapter = new $.jqx.dataAdapter(source);
     $("#dataTable").jqxDataTable(
     {
-        width: getWidth("dataTable"),
         pageable: true,
         pagerButtonsCount: 10,
         source: dataAdapter,
