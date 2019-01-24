@@ -68,6 +68,6 @@
     <!--== Map Area Start ==-->
     <div id="map"></div>
     <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYBqPCEm_Bj6ZWtiaZyefEea0KLYQA8K8&callback=initMap">
+        src="https://maps.googleapis.com/maps/api/js?key=APIKEY&callback=initMap">
     </script>
     <!--== Map Area End ==-->
