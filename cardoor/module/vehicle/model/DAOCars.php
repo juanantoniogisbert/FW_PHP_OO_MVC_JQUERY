@@ -10,7 +10,8 @@
         	$marca=$datos[marca];
         	$modelo=$datos[modelo];
         	$fabricante=$datos[fabricante];
-        	$combus=$datos[combus];
+			$combus=$datos[combus];
+			$extra=$extra[extra];
         	$color=$datos[color];
         	$puertas=$datos[puertas];
         	$caballos=$datos[caballos];
@@ -90,6 +91,15 @@
 
 		function delete_cars($cars){
 			$sql = "DELETE FROM coches WHERE id='$cars'";
+
+			$conexion = Conectar::con();
+            $res = mysqli_query($conexion, $sql);
+            Conectar::close($conexion);
+            return $res;
+		}
+
+		function delete_all_cars($cars){
+			$sql = "DELETE FROM coches";
 
 			$conexion = Conectar::con();
             $res = mysqli_query($conexion, $sql);

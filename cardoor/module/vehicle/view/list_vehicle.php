@@ -7,7 +7,7 @@
      <div class="row">
       <p><a class="btn btn-info" href="index.php?page=controller_cars&op=create">Create</a></p>
       </br>
-      <table id="list" class="table table-striped table-bordered" width="100%" cellspacing="0">
+      <table id="list" class="table table-striped table-bordered" cellspacing="0">
                 <thead>
                     <tr>
                         <th width=125><b>Matricula</b></th>
@@ -44,6 +44,7 @@
             </table>
      </div>
     </div>
+            <div><a class="btn btn-danger" href="index.php?page=controller_cars&op=deleteall">Borrar todo <i class="fa fa-trash"></i> </a></div>
 </div>
 <script>
     $(document).ready(function() {

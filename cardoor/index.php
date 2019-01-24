@@ -34,18 +34,16 @@ ini_set('display_errors', '1');
     	?>
     </div>
     <div id="menu">
-      <?php
-          if (isset($_SESSION['type']) && ($_SESSION['type'] == "admin")){
+          <!-- if (isset($_SESSION['type']) && ($_SESSION['type'] == "admin")){
               include("view/inc/menu_admin.php");
             }else if (isset($_SESSION['type']) && ($_SESSION['type'] == "user")){
-              include("view/inc/menu_user.php");
+                include("view/inc/menu_user.php");
             }else{
-              include("view/inc/menu.php");
-          }
-        ?>
+          } -->
     </div>
     <div id="">
     	<?php
+                include("view/inc/menu.php");
 		    include("view/inc/pages.php");
 		?>
         <br style="clear:both;" />

@@ -1,6 +1,6 @@
 <?php
 
-    $path  = $_SERVER ['DOCUMENT_ROOT'] . '/www/cardoor/';
+    $path  = $_SERVER ['DOCUMENT_ROOT'] . '/www/FW_PHP_OO_MVC_JQUERY/cardoor/';
     include($path . "module/vehicle/model/DAOCars.php");
     // include("module/vehicle/model/DAOCars.php");
     // session_start();
@@ -27,6 +27,21 @@
         case 'create';
             include("module/vehicle/model/validate.php");
             
+            $error='';
+            $error='';
+            $error='';
+            $error='';
+            $error='';
+            $error='';
+            $error='';
+            $error='';
+            $error='';
+            $error='';
+            $error='';
+            $error='';
+            $error='';
+            $error='';
+
             $check = true;
             
             if (isset($_POST['create'])){
@@ -49,20 +64,7 @@
             		}else{
             			$callback = 'index.php?page=503';
                         die('<script>window.location.href="'.$callback .'";</script>');
-                        $error='';
-                        $error='';
-                        $error='';
-                        $error='';
-                        $error='';
-                        $error='';
-                        $error='';
-                        $error='';
-                        $error='';
-                        $error='';
-                        $error='';
-                        $error='';
-                        $error='';
-                        $error='';
+
             		}
                 }
             }
@@ -111,6 +113,20 @@
     			$callback = 'index.php?page=503';
     			die('<script>window.location.href="'.$callback .'";</script>');
     		}else{
+                $error_matricula='';
+                $error_marca='';
+                $error_modelo='';
+                $error_fabricante='';
+                $error_tipo='';
+                $error_combus='';
+                $error_extra='';
+                $error_color='';
+                $error_puertas='';
+                $error_caballos='';
+                $error_marchas='';
+                $error_velocidad='';
+                $error_motor='';
+                $error_date_fabric='';
         	    include("module/vehicle/view/update_vehicle.php");
     		}
             break;
@@ -155,6 +171,29 @@
             }
             
             include("module/vehicle/view/delete_vehicle.php");
+            break;
+
+        case 'deleteall';
+            if (isset($_POST['deleteall'])){
+                try{
+                    $daocars = new DAOCars();
+                	$rdo = $daocars->delete_all_cars();
+                }catch (Exception $e){
+                    $callback = 'index.php?page=503';
+    			    die('<script>window.location.href="'.$callback .'";</script>');
+                }
+            	
+            	if($rdo){
+        			echo '<script language="javascript">alert("Borrado en la base de datos correctamente")</script>';
+        			$callback = 'index.php?page=controller_cars&op=list';
+    			    die('<script>window.location.href="'.$callback .'";</script>');
+        		}else{
+        			$callback = 'index.php?page=503';
+			        die('<script>window.location.href="'.$callback .'";</script>');
+        		}
+            }
+            
+            include("module/vehicle/view/delete_all_vehicle.php");
             break;
 
         case 'read_modal':

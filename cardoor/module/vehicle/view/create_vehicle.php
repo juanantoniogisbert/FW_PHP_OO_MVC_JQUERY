@@ -3,7 +3,7 @@
     <form autocomplete="on" method="post" name="alta_cars" id="alta_cars">
       <?php
     		if(isset($error)){
-    			print ("<BR><span CLASS='styerror'>" . "* ".$error . "</span><br/>");
+    			print ("<BR><span CLASS='styerror'>" . " ".$error . "</span><br/>");
     		}?>
         <h1>Coche nuevo</h1>
         <table border='0'>

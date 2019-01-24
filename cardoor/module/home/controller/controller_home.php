@@ -1,25 +1,41 @@
 <?php
     //include("module/cars/model/DAOCars.php");
-    $path = $_SERVER['DOCUMENT_ROOT'] . '/www/RUMA/';
-    include($path . "module/inicio/model/DAOHome.php");
+    $path = $_SERVER['DOCUMENT_ROOT'] . '/www/FW_PHP_OO_MVC_JQUERY/cardoor/';
+    include($path . "module/home/model/DAOHome.php");
 
     switch($_GET['op']){
 
-      case 'home':
-          try{
-              $daohome = new DAOHome();
-            $rdo = $daohome->select_all_cars();
-          }catch (Exception $e){
-              $callback = 'index.php?page=503';
-        die('<script>window.location.href="'.$callback .'";</script>');
-          }
-          if(!$rdo){
-        $callback = 'index.php?page=503';
-        die('<script>window.location.href="'.$callback .'";</script>');
-      }else{
-              include("module/home/view/home.php");
-      }
-          break;
+        case 'home':
+            try{
+                $daohome = new DAOHome();
+                $rdo = $daohome->select_all_cars();
+            }catch (Exception $e){
+                $callback = 'index.php?page=503';
+                die('<script>window.location.href="'.$callback .'";</script>');
+            }
+            if(!$rdo){
+                $callback = 'index.php?page=503';
+                die('<script>window.location.href="'.$callback .'";</script>');
+            }else{
+                include("module/home/view/home.php");
+            }
+        break;
+
+        // case 'listvistos':
+        //     try{
+        //         $daohome = new DAOHome();
+        //         $rdo = $daohome->select_all_cars();
+        //     }catch (Exception $e){
+        //         $callback = 'index.php?page=503';
+        //         die('<script>window.location.href="'.$callback .'";</script>');
+        //     }
+        //     if(!$rdo){
+        //         $callback = 'index.php?page=503';
+        //         die('<script>window.location.href="'.$callback .'";</script>');
+        //     }else{
+        //         include("module/home/view/home.php");
+        //     }
+        //     break;
 
         // case 'dropdown':
         //     try{
@@ -100,6 +116,9 @@
         //       echo json_encode($info);
         //     }
         //       break;
+
+
+
 
         default;
             include("view/inc/error404.php");

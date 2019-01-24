@@ -106,134 +106,46 @@
                     <!-- Section Title Start -->
                     <div class="col-lg-12">
                         <div class="section-title  text-center">
-                            <h2>Our cars</h2>
+                            <h2>Nuestros coches</h2>
                             <span class="title-line"><i class="fa fa-car"></i></span>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            <p>Los coches mas votasdos por la gente</p>
                         </div>
                     </div>
                     <!-- Section Title End -->
                 </div>
-
+            </div>
+        </section>
+        <section id="driver-page-wrap" class="section-padding">
+            <div class="container">
                 <div class="row">
-                    <div class="col-lg-12">
-                        <div class="team-content">
-                            <div class="row">
-                                <!-- OurCars Tab Menu start -->
-                                <div class="col-lg-3">
-                                    <div class="ourcar-tab-menu">
-                                        <ul class="nav nav-tabs" id="ourcartabmenu" role="tablist">
-                                            <li class="nav-item">
-                                                <a class="nav-link active" id="ourcar_item_1" data-toggle="tab" href="#ourcar_1" role="tab" aria-selected="true">VW Golf VII</a>
-                                            </li>
-                                            <li class="nav-item">
-                                                <a class="nav-link" id="ourcar_item_2" data-toggle="tab" href="#ourcar_2" role="tab" aria-selected="true">Audi A1 S-LINE</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <!-- OurCars Tab Menu End -->
+                    <?php
+                    if ($rdo->num_rows === 0){
+                        print_r($rdo);
+                                echo '<td align="center"  colspan="3">NO HAY NINGUN COCHE</td>';
+                            }else{
+                                foreach ($rdo as $row) {
+                                echo '<div class="col-lg-4 col-md-6">';
+                                    echo '<div class="single-driver-member">';
+                                        echo '<img src="view/assets/img/images/'.$row['imagen'].'" alt="" />';
+                                        echo '<div class="driver-mem-info">';
+                                        echo '<div class="driver-mem-sicons">';
+                                            echo '<a href="#"><i class="fa fa-eye"></i></a>';
+                                            echo '<a href="#"><i class="fa fa-heart"></i></a>';
+                                        echo '</div>';
+                                            echo '<h4 id="marca">'.$row['marca'].' <span id="modelo"> '.$row['modelo'].' </span></h4>';
+                                        echo '</div>';
 
-                                <!-- OurCars Tab Content start -->
-                                <div class="col-lg-9">
-                                    <div class="tab-content" id="ourcartabcontent">
-                                        <!-- Single OurCars  start -->
-                                        <div class="tab-pane fade show active" id="ourcar_1" role="tabpanel" aria-labelledby="ourcar_item_1">
-                                            <div class="row">
-                                                <div class="col-lg-8 text-center">
-                                                    <div class="display-table">
-                                                        <div class="display-table-cell">
-                                                            <div class="ourcar-pic">
-                                                                <img src="view/assets/img/car/car-5.jpg" alt="JSOFT">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-4">
-                                                    <div class="ourcar-info text-center">
-                                                        <h2>$ 75.40 <span>Rent per day</span></h2>
-                                                        <table class="our-table">
-                                                            <tr>
-                                                                <td>Model</td>
-                                                                <td>Limousine</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Doors</td>
-                                                                <td>5</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Seats</td>
-                                                                <td>15</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Transmission</td>
-                                                                <td>Automatic</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Air conditioning</td>
-                                                                <td>Yes</td>
-                                                            </tr>
-                                                        </table>
-                                                        <a href="#" class="bookbtn">Book Now</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Single OurCars End -->
-
-                                        <!-- Single OurCars  start -->
-                                        <div class="tab-pane fade" id="ourcar_2" role="tabpanel" aria-labelledby="ourcar_item_2">
-                                            <div class="row">
-                                                <div class="col-lg-8 text-center">
-                                                    <div class="display-table">
-                                                        <div class="display-table-cell">
-                                                            <div class="ourcar-pic">
-                                                                <img src="view/assets/img/car/car-1.jpg" alt="JSOFT">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-4">
-                                                    <div class="ourcar-info text-center">
-                                                        <h2>$ 75.40 <span>Rent per day</span></h2>
-                                                        <table class="our-table">
-                                                            <tr>
-                                                                <td>Model</td>
-                                                                <td>Limousine</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>ruven</td>
-                                                                <td>adri</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Seats</td>
-                                                                <td>15</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Transmission</td>
-                                                                <td>Automatic</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <td>Air conditioning</td>
-                                                                <td>Yes</td>
-                                                            </tr>
-                                                        </table>
-                                                        <a href="#" class="bookbtn">Book Now</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Single OurCars End -->
-                                    </div>
-                                </div>
-                                <!-- OurCars Tab Content End -->
-                            </div>
-                        </div>
-                    </div>
+                                        echo '<a>
+                                                <div class="marca" id="'.$row['marca'].'" style="display: none;"></div>
+                                                <div class="modelo" id="'.$row['modelo'].'" style="display: none;"></div>
+                                                <div class="precio" id="'.$row['precio'].'" style="display: none;"></div></a>';
+                                    echo '</div>';
+                                echo '</div>';
+                            }
+                        }
+                    ?>
                 </div>
             </div>
         </section>
-        <!--== Our Cars Area End ==-->
-</section>
+    </section>
 </div>

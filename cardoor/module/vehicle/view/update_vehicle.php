@@ -1,6 +1,6 @@
 </br></br></br>
 <div id="contenido">
-    <form autocomplete="on" method="post" name="update_vehicle" id="update_vehicle">
+    <form autocomplete="on" method="post" name="update_cars" id="update_cars">
         <h1>Modificar Coche</h1>
         <table border='0'>
             <tr>
@@ -346,7 +346,7 @@
             </tr>
 
             <tr>
-                <td><input type="button" name="update" id="update" value="Modificar" onclick="validate_cars_update()"/></td>
+                <td><input type="submit" name="update" id="update" value="Modificar" onclick="validate_cars_update()"/></td>
                 <td align="right"><a href="index.php?page=controller_cars&op=list" class="btn btn-secondary">Volver</a></td>
             </tr>
         </table>

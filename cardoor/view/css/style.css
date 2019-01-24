@@ -1896,15 +1896,15 @@ body,
 /*== Slider Area CSS ==*/
 
 .slider-bg-1 {
-	background-image: url("assets/img/slider-img/slider-img-4.jpg");
+	background-image: url("../img/carru2.jpg");
 }
 
 .slider-bg-2 {
-	background-image: url("assets/img/slider-img/slider-img-2.jpg");
+	background-image: url("../img/carru1.jpg");
 }
 
 .slider-bg-3 {
-	background-image: url("assets/img/slider-img/slider-img-3.jpg");
+	background-image: url("../img/carru3.jpg");
 }
 
 .home-slider-item {
@@ -2217,6 +2217,10 @@ body,
 	width: 100%;
 }
 
+#list_wrapper {
+	width: 100% !important;
+}
+
 /*== Our Cars CSS ==*/
 
 /*==========================
@@ -2226,7 +2230,7 @@ body,
 /*== Page Title CSS ==*/
 
 #page-title-area {
-	background-image: url("assets/img/page-title.jpg");
+	background-image: url("../assets/img/page-title.jpg");
 	background-position: center center;
 	background-size: cover;
 	padding-top: 220px;

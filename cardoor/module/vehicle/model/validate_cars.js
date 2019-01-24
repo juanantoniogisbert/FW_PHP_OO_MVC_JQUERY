@@ -1,11 +1,17 @@
 function validate_cars() {
-    console.log("dentro");
     if (document.alta_cars.tipo.value===""){
         document.getElementById('error_tipo').innerHTML = "Tiene que elegir un tipo de coche";
         document.alta_cars.tipo.focus();
         return 0;
     }
     document.getElementById('error_tipo').innerHTML = "";
+
+    if (document.alta_cars.matricula.value===""){
+        document.getElementById('error_matricula').innerHTML = "Tiene que escribir la matricula del coche";
+        document.alta_cars.matricula.focus();
+        return 0;
+    }
+    document.getElementById('error_matricula').innerHTML = "";
 
     if (document.alta_cars.marca.value===""){
         document.getElementById('error_marca').innerHTML = "Tiene que escribir la marca del coche";
@@ -38,9 +44,17 @@ function validate_cars() {
     if (document.alta_cars.combus.value===""){
         document.getElementById('error_combus').innerHTML = "Tiene que elegir almenos un tipo de combustible";
         document.alta_cars.combus.focus();
-    return 0;
+        return 0;
     }
     document.getElementById('error_combus').innerHTML = "";
+
+    if (document.alta_cars.extra.value===""){
+        document.getElementById('error_extra').innerHTML = "Tiene que marcar al menos un casilla de extras";
+        document.alta_cars.extra.focus();
+        return 0;
+    }
+    
+    document.getElementById('error_extra').innerHTML = "";
 
     if (document.alta_cars.color.value===""){
         document.getElementById('error_color').innerHTML = "Tiene que escribir el Color del coche";
@@ -137,12 +151,21 @@ function validate_cars_update() {
     return 0;
     }
     document.getElementById('error_combus').innerHTML = "";
+
+    if (document.update_cars.extra.value===""){
+        document.getElementById('error_extra').innerHTML = "Tiene que marcar al menos un casilla de extras";
+        document.update_cars.extra.focus();
+        return 0;
+    }
+    
+    document.getElementById('error_extra').innerHTML = "";
   
     if (document.update_cars.color.value===""){
         document.getElementById('error_color').innerHTML = "Tiene que escribir el Color del coche";
         document.update_cars.color.focus();
         return 0;
     }
+    
     document.getElementById('error_color').innerHTML = "";
 
     if (document.update_cars.puertas.value===""){
@@ -192,7 +215,6 @@ function validate_cars_update() {
 }
   
 $(document).ready(function () {
-    console.log("hola1");
     $('.matricula').click(function () {
         var id = this.getAttribute('id');
         // document.getElementById("details_cars").style.visibility = "visible";

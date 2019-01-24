@@ -57,7 +57,15 @@ CREATE TABLE `coches` (
 INSERT INTO `coches` (`id`, `tipo`, `matricula`, `marca`, `modelo`, `fabricante`, `combus`, `extra`, `color`, `puertas`, `caballos`, `marchas`, `velocidad`, `motor`, `date_fabric`, `hora`, `fecha`, `imagen`, `precio`) VALUES
 (1, 'Deportivo', '8645HCX', 'Mercedes', 'GLA', 'mercedes', 'hybrid', 'Ruedas', 'verde', '3', '290', '6', '250', 'v12', '2018-01-02', NULL, NULL, 'mercedes.png', '27400'),
 (2, 'turismo', '8492KRF', 'Seat', 'Leon', 'Auvi', 'Diesel', 'Ruedas', 'azul', '5', '130', '6', '260', 'v6', '03/10/2018', NULL, NULL, 'seat.png', '16700'),
-(3, 'Todoterreno', '8457CFF', 'Ford', 'Focus', 'Ford', 'Gasolina', 'WIFI', 'Azul', '5', '120', '5', '175', 'v6', '05/09/2015', NULL, NULL, 'ford.png', '13700');
+(3, 'Deportivo', '8645HCX', 'Mercedes', 'GLA', 'mercedes', 'hybrid', 'Ruedas', 'verde', '3', '290', '6', '250', 'v12', '2018-01-02', NULL, NULL, 'alfa.png', '9500'),
+(4, 'Deportivo', '2005GJK', 'AlfaRomeo', 'Mito', 'alfa', 'Gasolina', 'WIFI', 'rojo', '3', '150', '6', '140', 'v2', '04/10/2018', NULL, NULL, 'seat.png', '16700'),
+(5, 'turismo', '4879JKL', 'Ford', 'Focus', 'ford', 'Diesel', 'Ruedas', 'gris', '5', '110', '5', '120', 'v1', '03/12/2018', NULL, NULL, 'ford.png', '1000'),
+(6, 'turismo', '0000BCD', 'Ferrari', 'LaFerrari', 'ferrari', 'Gasolina', 'Ruedas', 'rojo', '3', '650', '8', '370', 'v8', '03/02/2018', NULL, NULL, 'ferrari.png', '16700'),
+(7, 'Todoterreno', '8457CFF', 'Ford', 'Focus', 'Ford', 'Gasolina', 'WIFI', 'Azul', '5', '120', '5', '175', 'v6', '05/05/2015', NULL, NULL, 'ford1.png', '13700'),
+(8, 'Todoterreno', '8457CFF', 'Ford', 'Focus', 'Ford', 'Gasolina', 'WIFI', 'Azul', '5', '120', '5', '175', 'v6', '05/05/2015', NULL, NULL, 'ford1.png', '13700'),
+(9, 'Todoterreno', '8457CFF', 'Ford', 'Focus', 'Ford', 'Gasolina', 'WIFI', 'Azul', '5', '120', '5', '175', 'v6', '05/05/2015', NULL, NULL, 'ford1.png', '13700'),
+(10, 'Todoterreno', '8457CFF', 'Ford', 'Focus', 'Ford', 'Gasolina', 'WIFI', 'Azul', '5', '120', '5', '175', 'v6', '05/05/2015', NULL, NULL, 'ford1.png', '13700'),
+(11, 'Todoterreno', '8457CFF', 'Ford', 'Focus', 'Ford', 'Gasolina', 'WIFI', 'Azul', '5', '120', '5', '175', 'v6', '05/05/2015', NULL, NULL, 'ford1.png', '13700');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
