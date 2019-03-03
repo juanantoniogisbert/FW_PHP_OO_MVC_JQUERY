@@ -48,13 +48,13 @@ function validate_cars() {
     }
     document.getElementById('error_combus').innerHTML = "";
 
-    if (document.alta_cars.extra.value===""){
-        document.getElementById('error_extra').innerHTML = "Tiene que marcar al menos un casilla de extras";
-        document.alta_cars.extra.focus();
-        return 0;
-    }
+    // if (document.alta_cars.extra.value===""){
+    //     document.getElementById('error_extra').innerHTML = "Tiene que marcar al menos un casilla de extras";
+    //     document.alta_cars.extra.focus();
+    //     return 0;
+    // }
     
-    document.getElementById('error_extra').innerHTML = "";
+    // document.getElementById('error_extra').innerHTML = "";
 
     if (document.alta_cars.color.value===""){
         document.getElementById('error_color').innerHTML = "Tiene que escribir el Color del coche";

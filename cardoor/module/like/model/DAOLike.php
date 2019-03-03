@@ -10,4 +10,28 @@
             Conectar::close($conexion);
             return $res;
 		}
+
+		function select_all_cars(){
+			$sql = "SELECT * FROM coches ORDER BY id ASC";
+	
+			$conexion = Conectar::con();
+			$res = mysqli_query($conexion, $sql);
+			Conectar::close($conexion);
+			return $res;
+		}
+
+		function insert($datos){
+			foreach($datos as $var) {
+				$matricula=$var->Matricula;
+				$marca = $var->Marca;
+				$modelo=$var->Modelo;
+	
+				$sql = " INSERT INTO fav (matricula, marca, modelo)"
+					. " VALUES ('$matricula', '$marca', '$modelo')";
+					$conexion = Conectar::con();
+					$res = mysqli_query($conexion, $sql);
+					Conectar::close($conexion);
+			}
+			return $res;
+		}
 	}

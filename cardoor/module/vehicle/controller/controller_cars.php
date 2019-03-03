@@ -2,8 +2,10 @@
 
     $path  = $_SERVER ['DOCUMENT_ROOT'] . '/www/FW_PHP_OO_MVC_JQUERY/cardoor/';
     include($path . "module/vehicle/model/DAOCars.php");
-    // include("module/vehicle/model/DAOCars.php");
-    // session_start();
+    @session_start();
+    if (isset($_SESSION["tiempo"])) {  
+	    $_SESSION["tiempo"] = time(); //Devuelve la fecha actual
+	}
     
     switch($_GET['op']){
         case 'list';
@@ -25,7 +27,7 @@
             break;
             
         case 'create';
-            include("module/vehicle/model/validate.php");
+            // include("module/vehicle/model/validate.php");
             
             $error='';
             $error='';
@@ -45,7 +47,7 @@
             $check = true;
             
             if (isset($_POST['create'])){
-                $check=validate();
+                // $check=validate();
                 
                 if ($check){
                     $_SESSION['coches']=$_POST;
@@ -72,12 +74,12 @@
             break;
             
         case 'update';
-            include("module/vehicle/model/validate.php");
+            // include("module/vehicle/model/validate.php");
             
             $check = true;
             
             if (isset($_POST['update'])){
-                $check=validate();
+                // $check=validate();
                 
                 if ($check){
                     $_SESSION['coches']=$_POST;

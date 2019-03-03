@@ -51,7 +51,7 @@
                             </div>
 
                             <div class="message-input">
-                                <textarea name="review" cols="30" rows="10" placeholder="Message"></textarea>
+                                <textarea name="review" cols="30" rows="5" placeholder="Message"></textarea>
                             </div>
 
                             <div class="input-submit">
@@ -66,6 +66,6 @@
     <!--== Contact Page Area End ==-->
 
     <!--== Map Area Start ==-->
-    <div id="map"></div>
+<div id="map"></div>
 
     <!--== Map Area End ==-->

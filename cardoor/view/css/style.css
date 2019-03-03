@@ -77,6 +77,47 @@
 
 /*== Theme Defualt CSS ==*/
 
+/* .col-lg-4 {
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 108.333%;
+    max-width: 100em;
+}
+
+.col-md-6 {
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 64%;
+} */
+
+.gravatar {
+	margin-left: 120%;
+	margin-top: -20%;
+}
+
+.suggestions {
+	position: absolute;
+	text-align: left;
+}
+
+.columna {
+	columns: 3;
+	width: 90em;
+	margin-left: 15%;
+	margin-top: 3%;
+}
+
+#map {
+	height: 400px;
+	width: 90%;
+	margin: 0 auto;
+  }
+  /* Optional: Makes the sample page fill the window. */
+  html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+  }
+
 .overlay {
 	position: relative;
 	z-index: 1;
@@ -1970,6 +2011,8 @@ body,
 
 .booka-car-content .bookcar-btn {
 	border: medium none;
+	margin-top: -4%;
+	margin-left: 75%;
 }
 
 .booka-car-content .bookcar-btn:hover {
@@ -2238,6 +2281,7 @@ body,
 
 #page-title-area .section-title {
 	margin-bottom: 0;
+	margin-top: -16%;
 }
 
 /*== Car List CSS ==*/

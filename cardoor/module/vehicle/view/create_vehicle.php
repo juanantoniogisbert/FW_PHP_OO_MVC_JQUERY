@@ -191,7 +191,7 @@
             </tr>
 
             <tr>
-                <td><input type="button" name="create" id="create" value="Enviar" onclick="validate_cars()"/></td>
+                <td><input type="submit" name="create" id="create" value="Enviar" onclick="validate_cars()"/></td>
                 <td align="right"><a href="index.php?page=controller_cars&op=list" class="btn btn-secondary">Volver</a></td>
             </tr>
         </table>

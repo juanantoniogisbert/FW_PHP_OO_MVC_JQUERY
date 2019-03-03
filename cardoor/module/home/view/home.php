@@ -56,47 +56,48 @@
 
         <!--== Book A Car Area Start ==-->
         <div id="book-a-car">
-            <div class="container">
+            <div class="container" style="align: center;">
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="booka-car-content">
                             <form action="index3.html">
                                 <div class="pick-location bookinput-item">
-                                    <select class="custom-select">
-                                    <option selected>Pick Location</option>
-                                    <option value="1">Dhaka</option>
-                                    <option value="2">Comilla</option>
-                                    <option value="3">Barishal</option>
-                                    <option value="3">Rangpur</option>
+                                    <select class="custom-select" id="cboTipos">
+                                        <option value="0">Seleccione un tipo</option>
                                     </select>
-                                </div>
-
-                                <div class="pick-date bookinput-item">
-                                    <input id="startDate2" placeholder="Pick Date" />
-                                </div>
-
-                                <div class="retern-date bookinput-item">
-                                    <input id="endDate2" placeholder="Return Date" />
                                 </div>
 
                                 <div class="car-choose bookinput-item">
-                                    <select class="custom-select">
-                                    <option selected>Choose Car</option>
-                                    <option value="1">BMW</option>
-                                    <option value="2">Audi</option>
-                                    <option value="3">Lexus</option>
+                                    <select class="custom-select" id="cboGamas">
+                                        <option value="0">Seleccione una gama</option>
                                     </select>
                                 </div>
 
-                                <div class="bookcar-btn bookinput-item">
-                                    <button type="submit">Book Car</button>
+                                <div class="contact-form">
+                                    <form action="index.html">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6">
+                                                <div class="name-input">
+                                                    <input type="text" id="service" name="service">
+                                                    <div id="suggestions"></div>
+                                                    <div id="vistaauto"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
+
+                                <div class="bookcar-btn bookinput-item">
+                                    <button type="submit" id="send">Book Car</button>
+                                </div>
+
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+
         <!--== Book A Car Area End ==-->
 
         <!--== Our Cars Area Start ==-->
@@ -126,10 +127,11 @@
                                 foreach ($rdo as $row) {
                                 echo '<div class="col-lg-4 col-md-6">';
                                     echo '<div class="single-driver-member">';
-                                        echo '<img src="view/assets/img/images/'.$row['imagen'].'" alt="" />';
+                                        echo '<img src="'.$row['imagen'].'" alt="" />';
                                         echo '<div class="driver-mem-info">';
                                         echo '<div class="driver-mem-sicons">';
-                                            echo '<a href="#"><i class="fa fa-eye"></i></a>';
+                                            // echo '<a href="#"><i class="fa fa-eye"></i></a>';
+                                        print ("<div class='matricula btn btn-primary' id='".$row['matricula']."'>Mas Detalles</div>");
                                             echo '<a href="#"><i class="fa fa-heart"></i></a>';
                                         echo '</div>';
                                             echo '<h4 id="marca">'.$row['marca'].' <span id="modelo"> '.$row['modelo'].' </span></h4>';
@@ -146,6 +148,29 @@
                     ?>
                 </div>
             </div>
+            <section id="cars_modal">
+                <div id="details_cars" style="display: none;">
+                    <div id="details">
+                        <div id="container">
+                            <strong>Matricula: </strong><div id="matricula"></div></br>
+                            <strong>Tipo: </strong><div id="tipo"></div></br>
+                            <strong>Marca: </strong><div id="marca"></div></br>
+                            <strong>Modelo: </strong><div id="modelo"></div></br>
+                            <strong>Fabricante: </strong><div id="fabricante"></div></br>
+                            <strong>Combustible: </strong><div id="combus"></div></br>
+                            <strong>Extra: </strong><div id="extra"></div></br>
+                            <strong>Color: </strong><div id="color"></div></br>
+                            <strong>Puertas: </strong><div id="puertas"></div></br>
+                            <strong>Caballos: </strong><div id="caballos"></div></br>
+                            <strong>Marchas: </strong><div id="marchas"></div></br>
+                            <strong>Velocidad: </strong><div id="velocidad"></div></br>
+                            <strong>Motor: </strong><div id="motor"></div></br>
+                            <strong>Fecha de fabricacion: </strong><div id="date_fabric"></div></br>
+                            <strong>Precio: </strong><div id="precio"></div></br>
+                        </div>
+                    </div>
+                </div>
+            </section>
         </section>
     </section>
 </div>

@@ -16,6 +16,7 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
 
 		<script type="text/javascript" src="lang/translate.js"></script>
+		<script type="text/javascript" src="view/assets/js/jqueryTranslator.js"></script>
 
 		<!-- <script type="text/javascript" src="module/like/model/filter_like.js" ></script> -->
 

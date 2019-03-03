@@ -1,5 +1,4 @@
 $(document).ready(function () {
-    console.log("hola");
     var url = "module/like/controller/controller_like.php?op=datatable";  
     // prepare the data
     var source =
@@ -16,20 +15,20 @@ $(document).ready(function () {
     
     var dataAdapter = new $.jqx.dataAdapter(source);
     $("#dataTable").jqxDataTable(
-    {
-        pageable: true,
-        pagerButtonsCount: 10,
-        source: dataAdapter,
-        sortable: true,
-        pageable: true,
-        altRows: true,
-        filterable: true,
-        columnsResize: true,
-        pagerMode: 'advanced',
-        columns: [
-          { text: 'Matriucla', dataField: 'matricula'},
-          { text: 'Marca', dataField: 'marca' },
-          { text: 'Modelo', dataField: 'modelo'}
-      ]
-    });  
+        {
+            pageable: true,
+            pagerButtonsCount: 10,
+            source: dataAdapter,
+            sortable: true,
+            pageable: true,
+            altRows: true,
+            filterable: true,
+            columnsResize: true,
+            pagerMode: 'advanced',
+            columns: [
+            { text: 'Matriucla', dataField: 'matricula'},
+            { text: 'Marca', dataField: 'marca' },
+            { text: 'Modelo', dataField: 'modelo'}
+        ]
+        });  
 });
