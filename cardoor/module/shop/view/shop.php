@@ -29,5 +29,8 @@
       <button id="btn-api" type="submit" class="btn btn-success">Search</button>
       <div id="api_container"></div>
   </td>
-  
   <div id="shop_api">
+
+
+
+<button id="btn-details" type="submit" class="btn btn-success">details</button>

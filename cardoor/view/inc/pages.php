@@ -13,6 +13,9 @@
 			case "controller_login":
 				include("module/login/controller/".$_GET['page'].".php");
 				break;
+			case "controller_cart":
+				include("module/cart/controller/".$_GET['page'].".php");
+				break;
 			case "services";
 				include("module/service/".$_GET['page'].".php");
 				break;

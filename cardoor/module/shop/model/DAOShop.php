@@ -21,4 +21,13 @@
             Conectar::close($conexion);
             return $res;
 		}
+
+		function select_cars_details($id){
+			$sql = "SELECT * FROM coches WHERE id='$id'";
+
+			$conexion = Conectar::con();
+            $res = mysqli_query($conexion, $sql)->fetch_object();
+            Conectar::close($conexion);
+            return $res;
+		}
 	}

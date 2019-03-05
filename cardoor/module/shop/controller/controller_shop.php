@@ -32,7 +32,7 @@
                 // print_r($prod);
                 exit();
 			}
-			break;
+		break;
 
         case 'read_modal':
             try{
@@ -50,7 +50,7 @@
                 echo json_encode($cars);
                 exit;
         	}
-              break;
+        break;
 
         case 'like':
             $datos = json_decode($_POST['data']);
@@ -65,7 +65,30 @@
             }
         break;
 
+        case 'details':
+            try {
+                $daoshop = new DAOShop();
+                $res = $daoshop->select_cars_details($_SESSION['id']);
+                $datos = get_object_vars($res);
+            } catch (Exception $e) {
+                echo json_encode("error1");
+            }
+            
+            if (!$res) {
+                echo json_encode("error2");
+            }else{
+                echo json_encode($res);
+                exit();
+            }
+        break;
+        
+        case 'details2':
+            $_SESSION['id']=$_GET['id'];
+            include("module/shop/view/details_shop.php");
+        break;
+
+
         default;
             include("view/inc/error404.php");
-            break;
-        }
+        break;
+    }

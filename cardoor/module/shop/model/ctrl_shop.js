@@ -1,17 +1,17 @@
 $(document).ready(function(){
-    if (document.getElementById('shop_api')) {
+    if (document.getElementById('list_cars')) {
         $.get("module/shop/controller/controller_shop.php?&op=data_shop", function(data,status) {
             var json = JSON.parse(data);
                $.each(json, function(index, list) {
                 //    console.log(list);
                 var ElementDiv = document.createElement('div');
-                ElementDiv.id = "list_shop";
+                ElementDiv.id = "list_cars";
                 ElementDiv.innerHTML =  "<div class='row popular-car-gird'>"
                                             +"<div class='single-popular-car'>"
                                                 +"<div class='p-car-thumbnails'>"
-                                                    +"<a class='car-hover' href='"+list.imagen+"'>"
-                                                    +"<img src='"+list.imagen+"' alt='JSOFT'>"
-                                                +"</a>"
+                                                    +"<a class='car-hover'>"
+                                                        +"<img src='"+list.imagen+"' alt='JSOFT'>"
+                                                    +"</a>"
                                                 +"</div>"
                                                 +"<div class='p-car-content'>"
                                                     +"<h3>"
@@ -24,7 +24,13 @@ $(document).ready(function(){
                                                         +"<a>"+list.tipo+"</a>"
                                                         // +"<a><i class='fa fa-heart'></i></a>"
                                                         +"<a id='btn-cart'><i class='fa fa-heart'></i>"
-                                                            +"<span class='glyphicon glyphicon-shopping-cart'></span>"
+                                                        +"<span class='glyphicon glyphicon-shopping-cart'></span>"
+
+
+                                                            +"<a  id="+list.id+" class='btn-details'><i class='fa fa-plus'></i></a>"
+
+
+                                                            +"<a onclick='InsertCarr()'><i class='fa fa-shopping-cart'></i></a>"
                                                             +"<div class='marca' id='.$row['marca'].' style='display: none;'></div>"
                                                             +"<div class='modelo' id='.$row['modelo'].' style='display: none;'></div>"
                                                             +"<div class='precio' id='.$row['precio'].' style='display: none;'></div></a>";
@@ -32,13 +38,12 @@ $(document).ready(function(){
                                                 +"</div>"
                                             +"</div>"
                                         +"</div>"
-
                 document.getElementById("list_cars").appendChild(ElementDiv);
           });
         });
     }
 
-      $( "#btn-api" ).click(function() {
+    $( "#btn-api" ).click(function() {
         var fideus = $('#fideus').val();
         function search(fideus) {
           return $.getJSON("https://api.fuelapi.com/v1/json/vehicle/M/?api_key=daefd14b-9f2b-4968-9e4d-9d4bb4af01d1&model".replace("M", fideus));
@@ -68,15 +73,92 @@ $(document).ready(function(){
                                         +'<a>'+fideus['bodytype']+'</a>'
                                         // +"<a><i class='fa fa-heart'></i></a>"
                                         +'<a id="btn-cart"><i class="fa fa-heart"></i></a>'
+                                        +'<a id="btn-cart"><i class="fa fa-shopping-cart"></i></a>'
                                     +'</div>'
                                 +'</div>'
                             +'</div>'
                         +'</div>').appendTo($div);
-              $row.on("click", function() {
+            $row.on("click", function() {
                 document.location = list.links.web;
-              });
-            })
-          });
+            });
+        })
         });
-  });
+    });
+
+    if (document.getElementById('list_details_cars')){
+        $.get("module/shop/controller/controller_shop.php?&op=details", function(data, status) {
+            var list = JSON.parse(data);
+            console.log(data);
+            var ElementDiv = document.createElement('div');
+            ElementDiv.id = "list_details_cars";
+            ElementDiv.innerHTML =  +"<section id='car-list-area' class='section-padding'>"
+                                        +"<div class='container'>"
+                                            +"<div class='row'>"
+                                                +"<div class='col-lg-8'>"+
+                                                    +"<div class='car-details-content'>"
+                                                        +"<h2>"+ list.marca + "<span class='price'>Price: <b>"+list.precio+"</b></span></h2>"
+                                                        +"<div class='car-preview-crousel'>"
+                                                            +"<div class='single-car-preview'>"
+                                                                +"<img src='"+list.imagen+"'>"
+                                                            +"</div>"
+                                                            +"<div class='single-car-preview'>"
+                                                                +"<img src='assets/img/car/car-1.jpg'>"
+                                                            +"</div>"
+                                                            +"<div class='single-car-preview'>"
+                                                                +"<img src='assets/img/car/car-6.jpg'>"
+                                                            +"</div>"
+                                                        +"</div>"
+                                                        +"<div class='car-details-info'>"
+                                                            +"<h4>Additional Info</h4>"
+                                                            +"<p>The Aventador LPER 720-4 50° ise a limited a new specific engine calibration,plitter.</p>"
+                                                            +"<div class='technical-info'>"
+                                                                +"<div class='row'>"
+                                                                    +"<div class='col-lg-6'>"
+                                                                        +"<div class='tech-info-table'>"
+                                                                            +"<table class='table table-bordered'>"
+                                                                                +"<tr>"
+                                                                                    +"<th>Maker</th>"
+                                                                                    +"<td>"+list.fabricante+"</td>"
+                                                                                +"</tr>"
+                                                                                +"<tr>"
+                                                                                    +"<th>Fuel</th>"
+                                                                                    +"<td>"+list.combus+"</td>"
+                                                                                +"</tr>"
+                                                                                +"<tr>"
+                                                                                    +"<th>Doors</th>"
+                                                                                    +"<td>"+list.puertas+"</td>"
+                                                                                +"</tr>"
+                                                                                +"<tr>"
+                                                                                    +"<th>Date fabric</th>"
+                                                                                    +"<td>"+list.date_fabric+"</td>"
+                                                                                +"</tr>"
+                                                                            +"</table>"
+                                                                        +"</div>"
+                                                                    +"</div>"
+                                
+                                                                    +"<div class='col-lg-6'>"
+                                                                        +"<div class='tech-info-list'>"
+                                                                            +"<ul>"
+                                                                                +"<li>"+list.extra+"</li>"
+                                                                            +"</ul>"
+                                                                        +"</div>"
+                                                                    +"</div>"
+                                                                +"</div>"
+                                                            +"</div>"
+                                                        +"</div>"
+                                                    +"</div>"
+                                                +"</div>"
+                                            +"</div>"
+                                        +"</div>"
+                                    +"</section>"
+
+            document.getElementById("list_details_cars").appendChild(ElementDiv);
+        });
+    }
+
+    $(document).on('click','.btn-details',function () {
+        var id = this.getAttribute('id');
+        window.location.href = 'index.php?page=controller_shop&op=details2&id=' + id;
+    });
+});
   

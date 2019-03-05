@@ -24,6 +24,7 @@
                                     <img style="margin-top: 5%;" data-translate="Español" id="spanish" src="view/assets/img/flags/es.png">
                                     <img style="margin-top: 5%;" data-translate="Inglés" id="english" src="view/assets/img/flags/uk.png">
                                     <img style="margin-top: 5%;" data-translate="Valenciano" id="valencia" src="view/assets/img/flags/val.png">
+                                    <li><a href="index.php?page=controller_cart&op=view"><img style="margin-top: 3%;" src="view/assets/img/cart.png"></a></li>
                                 </ul>
                                 &nbsp;&nbsp;&nbsp;&nbsp;
                                 <div style="margin-top: -10.5%" id="axantar"></div>
