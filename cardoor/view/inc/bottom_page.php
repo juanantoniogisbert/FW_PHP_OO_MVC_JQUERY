@@ -31,7 +31,9 @@
 <script src="view/assets/js/datatables.min.js"></script>
 
     <script src="module/contact/model/contact.js"></script>
+    
     <script src="module/cart/model/cart.js"></script>
+
     <script type="text/javascript" src="view/assets/js/jqueryTranslator.js"></script>
 
     <script type="text/javascript" src="module/shop/model/ctrl_shop.js" ></script>

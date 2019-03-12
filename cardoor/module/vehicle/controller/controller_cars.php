@@ -6,7 +6,7 @@
     if (isset($_SESSION["tiempo"])) {  
 	    $_SESSION["tiempo"] = time(); //Devuelve la fecha actual
 	}
-    
+    if (isset($_SESSION['tipo']) && ($_SESSION['tipo']=='admin')){
     switch($_GET['op']){
         case 'list';
             try{
@@ -46,11 +46,13 @@
 
             $check = true;
             
-            if (isset($_POST['create'])){
+            if ($_POST){
                 // $check=validate();
                 
                 if ($check){
                     $_SESSION['coches']=$_POST;
+                    // echo "<script>console.log('Hola: ". $_POST['matricula'] . "');</script>";
+                    // exit();
                     try{
                         $daocars = new DAOCars();
     		            $rdo = $daocars->insert_cars($_POST);
@@ -222,6 +224,11 @@
         default;
             include("view/inc/error404.php");
             break;
+        
+    }
+    }else{
+        $callback = 'index.php?page=404';
+		die('<script>window.location.href="'.$callback .'";</script>');
     }
 
 

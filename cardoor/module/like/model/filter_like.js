@@ -2,16 +2,16 @@ $(document).ready(function () {
     var url = "module/like/controller/controller_like.php?op=datatable";  
     // prepare the data
     var source =
-    {
-        dataType: "json",
-        dataFields: [
-            { name: 'matricula', type: 'string' },
-            { name: 'marca', type: 'string' },
-            { name: 'modelo', type: 'string' }
-        ],
-        id: 'id',
-        url: url
-    };
+        {
+            dataType: "json",
+            dataFields: [
+                { name: 'matricula', type: 'string' },
+                { name: 'marca', type: 'string' },
+                { name: 'modelo', type: 'string' }
+            ],
+            id: 'id',
+            url: url
+        };
     
     var dataAdapter = new $.jqx.dataAdapter(source);
     $("#dataTable").jqxDataTable(

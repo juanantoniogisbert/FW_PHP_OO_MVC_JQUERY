@@ -132,8 +132,9 @@
                                         echo '<div class="driver-mem-sicons">';
                                             // echo '<a href="#"><i class="fa fa-eye"></i></a>';
                                         // print ("<div class='matricula btn btn-primary' id='".$row['matricula']."'>Mas Detalles</div>");
-                                            echo '<a href="#"><i class="fa fa-heart"></i></a>';
-                                            echo '<a onclick="InsertCarr()"><i class="fa fa-shopping-cart"></i></a>';
+                                            // echo '<a id="'.$row['id'].'"><i class="fa fa-heart"></i></a>';
+                                            echo '<a id="'.$row['id'].'" class="btn-details"><i class="fa fa-plus"></i></a>';
+                                            echo '<a id="'.$row['id'].'" class="addToCart"><i class="fa fa-shopping-cart"></i></a>';
                                         echo '</div>';
                                             echo '<h4 id="marca">'.$row['marca'].' <span id="modelo"> '.$row['modelo'].' </span></h4>';
                                         echo '</div>';

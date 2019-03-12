@@ -54,61 +54,79 @@ $(document).ready(function () {
         });
     });
 
-    // $('.matricula').click(function () {
-    //     var id = this.getAttribute('id');
-    //     // document.getElementById("details_cars").style.visibility = "visible";
-    //      // alert(id);
+    if (document.getElementById('list_details_cars')){
+        $.get("module/home/controller/controller_home.php?&op=details", function(data, status) {
+            var list = JSON.parse(data);
+            console.log(data);
+            var ElementDiv = document.createElement('div');
+            ElementDiv.id = "list_details_cars";
+            ElementDiv.innerHTML =  +"<section id='car-list-area' class='section-padding'>"
+                                        +"<div class='container'>"
+                                            +"<div class='row'>"
+                                                +"<div class='col-lg-8'>"+
+                                                    +"<div class='car-details-content'>"
+                                                        +"<h2>"+ list.marca + "<span class='price'>Price: <b>"+list.precio+"</b></span></h2>"
+                                                        +"<div class='car-preview-crousel'>"
+                                                            +"<div class='single-car-preview'>"
+                                                                +"<img src='"+list.imagen+"'>"
+                                                            +"</div>"
+                                                            +"<div class='single-car-preview'>"
+                                                                +"<img src='"+list.imagen2+"'>"
+                                                            +"</div>"
+                                                            +"<div class='single-car-preview'>"
+                                                                +"<img src='"+list.imagen3+"'>"
+                                                            +"</div>"
+                                                        +"</div>"
+                                                        +"<div class='car-details-info'>"
+                                                            +"<h4>Additional Info</h4>"
+                                                            +"<p>The Aventador LPER 720-4 50° ise a limited a new specific engine calibration,plitter.</p>"
+                                                            +"<div class='technical-info'>"
+                                                                +"<div class='row'>"
+                                                                    +"<div class='col-lg-6'>"
+                                                                        +"<div class='tech-info-table'>"
+                                                                            +"<table class='table table-bordered'>"
+                                                                                +"<tr>"
+                                                                                    +"<th>Maker</th>"
+                                                                                    +"<td>"+list.fabricante+"</td>"
+                                                                                +"</tr>"
+                                                                                +"<tr>"
+                                                                                    +"<th>Fuel</th>"
+                                                                                    +"<td>"+list.combus+"</td>"
+                                                                                +"</tr>"
+                                                                                +"<tr>"
+                                                                                    +"<th>Doors</th>"
+                                                                                    +"<td>"+list.puertas+"</td>"
+                                                                                +"</tr>"
+                                                                                +"<tr>"
+                                                                                    +"<th>Date fabric</th>"
+                                                                                    +"<td>"+list.date_fabric+"</td>"
+                                                                                +"</tr>"
+                                                                            +"</table>"
+                                                                        +"</div>"
+                                                                    +"</div>"
+                                
+                                                                    +"<div class='col-lg-6'>"
+                                                                        +"<div class='tech-info-list'>"
+                                                                            +"<ul>"
+                                                                                +"<li>"+list.extra+"</li>"
+                                                                            +"</ul>"
+                                                                        +"</div>"
+                                                                    +"</div>"
+                                                                +"</div>"
+                                                            +"</div>"
+                                                        +"</div>"
+                                                    +"</div>"
+                                                +"</div>"
+                                            +"</div>"
+                                        +"</div>"
+                                    +"</section>"
 
-    //     $.get("module/home/controller/controller_home.php?op=read_modal&modal=" + id, function (data, status) {
-    //         var json = JSON.parse(data);
-    //         console.log(json);
+            document.getElementById("list_details_cars").appendChild(ElementDiv);
+        });
+    }
 
-    //         if(json === 'error') {
-    //             //console.log(json);
-    //             //pintar 503
-    //             window.location.href='index.php?page=503';
-    //         }else{
-    //             console.log(json.matricula);
-    //             $("#matricula").html(json.matricula);
-    //             $("#tipo").html(json.tipo);
-    //             $("#marca").html(json.marca);
-    //             $("#modelo").html(json.modelo);
-    //             $("#fabricante").html(json.fabricante);
-    //             $("#combus").html(json.combus);
-    //             $("#extra").html(json.extra);
-    //             $("#color").html(json.color);
-    //             $("#puertas").html(json.puertas);
-    //             $("#caballos").html(json.caballos);
-    //             $("#marchas").html(json.marchas);
-    //             $("#velocidad").html(json.velocidad);
-    //             $("#motor").html(json.motor);
-    //             $("#date_fabric").html(json.date_fabric);
-    //             $("#precio").html(json.precio);
-
-    //             $("#details_cars").show();
-    //             $("#cars_modal").dialog({
-    //                 width: 850, //<!-- ------------- ancho de la ventana -->
-    //                 height: 500, //<!--  ------------- altura de la ventana -->
-    //                 // show: "scale", //<!-- ----------- animación de la ventana al aparecer -->
-    //                 // hide: "scale", //<!-- ----------- animación al cerrar la ventana -->
-    //                 resizable: "false", //<!-- ------ fija o redimensionable si ponemos este valor a "true" -->
-    //                 // position: "down", //<!--  ------ posicion de la ventana en la pantalla (left, top, right...) -->
-    //                 modal: "true", //<!-- ------------ si esta en true bloquea el contenido de la web mientras la ventana esta activa (muy elegante) -->
-    //                 buttons: {
-    //                     Ok: function () {
-    //                         $(this).dialog("close");
-    //                     }
-    //                 },
-    //                 // show: {
-    //                 //     effect: "blind",
-    //                 //     duration: 1000
-    //                 // },
-    //                 // hide: {
-    //                 //     effect: "explode",
-    //                 //     duration: 1000
-    //                 // }
-    //             });
-    //         }//end-else
-    //     });
-    // });
+    $(document).on('click','.btn-details',function () {
+        var id = this.getAttribute('id');
+        window.location.href = 'index.php?page=controller_home&op=details2&id=' + id;
+    });
 });

@@ -27,5 +27,14 @@ $(document).ready(function(){
 				}
 			}
 		});
-	}, 120000);
+    }, 120000);
+    
+    setInterval(function(){ 
+        $.ajax({
+            type : 'POST',
+            url  : 'module/login/controller/controller_login.php?op=reg',
+        });
+     }, 5000);
+
+
 });

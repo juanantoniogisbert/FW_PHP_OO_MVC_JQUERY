@@ -58,17 +58,19 @@
           }else{
             $value = get_object_vars($res);
             if (password_verify($_POST['passwd'],$value['passwd'])) {
-              echo 'ok';
-              $_SESSION['tipo'] = $value['tipo'];
-              $_SESSION['username'] = $value;
-              $_SESSION['email'] = $value['email'];
-              $_SESSION['tiempo'] = time();
-              exit();
+                echo 'ok';
+                $_SESSION['tipo'] = $value['tipo'];
+                $_SESSION['username'] = $value['username'];
+                $_SESSION['email'] = $value['email'];
+                $_SESSION['tiempo'] = time();
+                // echo "<script>console.log('MOSTRA: ". $_SESSION['username'] . "');</script>";
+                // exit();
+                exit();
             }else {
-              echo "No coinciden los datos";
-              exit();
+                echo "No coinciden los datos";
+                exit();
+              }
             }
-          }
         break;
 
         case 'logout':
@@ -96,6 +98,15 @@
             }
           }
         break;
+
+        case 'reg':
+            if (!isset($_SESSION["tiempo"])) {
+                echo "none";
+            } else {
+                session_regenerate_id();
+                exit();
+            }
+            break;
 
         default;
         include("view/inc/error404.php");

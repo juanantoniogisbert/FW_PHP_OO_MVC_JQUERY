@@ -87,16 +87,16 @@
             <tr>
                 <td>Elige los extras: </td>
                 <br>
-                <td><input name="extra[]" class="llantas" type="checkbox" value="llantas">Llantas de aleación
-            			<input name="extra[]" class="ruedas" type="checkbox" value="ruedas">Ruedas
-            			<input name="extra[]" class="cristal" type="checkbox" value="cristal">Crital tintado
-            			<input name="extra[]" class="asientos" type="checkbox" value="asientos">Asientos ventilados y calefactables
+                <td><input id="extra[]" name="extra[]" class="llantas" type="checkbox" value="llantas">Llantas de aleación
+            			<input id="extra[]" name="extra[]" class="ruedas" type="checkbox" value="ruedas">Ruedas
+            			<input id="extra[]" name="extra[]" class="cristal" type="checkbox" value="cristal">Crital tintado
+            			<input id="extra[]" name="extra[]" class="asientos" type="checkbox" value="asientos">Asientos ventilados y calefactables
                 <br>
-                  <input name="extra[]" class="gps" type="checkbox" value="gps">GPS
-            			<input name="extra[]" class="sonido" type="checkbox" value="sonido">Sonido surround
-            			<input name="extra[]" class="wifi" type="checkbox" value="wifi">WIFI
-            			<input name="extra[]" class="des" type="checkbox" value="des">Drive Easy Speak
-            			<input name="extra[]" class="crucero" type="checkbox" value="crucero">Control de velocidad crucero</td>
+                  <input id="extra[]" name="extra[]" class="gps" type="checkbox" value="gps">GPS
+            			<input id="extra[]" name="extra[]" class="sonido" type="checkbox" value="sonido">Sonido surround
+            			<input id="extra[]" name="extra[]" class="wifi" type="checkbox" value="wifi">WIFI
+            			<input id="extra[]" name="extra[]" class="des" type="checkbox" value="des">Drive Easy Speak
+            			<input id="extra[]" name="extra[]" class="crucero" type="checkbox" value="crucero">Control de velocidad crucero</td>
                 <td><font color="red">
                     <span id="error_extra[]" class="error">
                         <?php
@@ -191,7 +191,7 @@
             </tr>
 
             <tr>
-                <td><input type="submit" name="create" id="create" value="Enviar" onclick="validate_cars()"/></td>
+                <td><input type="button" name="create" id="create" value="Enviar" onclick="validate_cars()"/></td>
                 <td align="right"><a href="index.php?page=controller_cars&op=list" class="btn btn-secondary">Volver</a></td>
             </tr>
         </table>

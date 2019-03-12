@@ -33,4 +33,4 @@
 
 
 
-<button id="btn-details" type="submit" class="btn btn-success">details</button>
+<!-- <button id="btn-details" type="submit" class="btn btn-success">details</button> -->

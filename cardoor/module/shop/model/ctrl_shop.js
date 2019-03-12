@@ -22,18 +22,15 @@ $(document).ready(function(){
                                                         +"<a>CV "+list.caballos+"</a>"
                                                         +"<a>"+list.matricula+"</a>"
                                                         +"<a>"+list.tipo+"</a>"
-                                                        // +"<a><i class='fa fa-heart'></i></a>"
-                                                        +"<a id='btn-cart'><i class='fa fa-heart'></i>"
-                                                        +"<span class='glyphicon glyphicon-shopping-cart'></span>"
-
-
-                                                            +"<a  id="+list.id+" class='btn-details'><i class='fa fa-plus'></i></a>"
-
-
-                                                            +"<a onclick='InsertCarr()'><i class='fa fa-shopping-cart'></i></a>"
-                                                            +"<div class='marca' id='.$row['marca'].' style='display: none;'></div>"
-                                                            +"<div class='modelo' id='.$row['modelo'].' style='display: none;'></div>"
-                                                            +"<div class='precio' id='.$row['precio'].' style='display: none;'></div></a>";
+                                                        // +"<a><i class='fa fa-heart'></i>"
+                                                            +"<a id="+list.id+" class='btn-details'><i class='fa fa-plus'></i></a>"
+                                                            
+                                                                +"<a id='"+list.id+"' class='addToCart' ><i class='fa fa-shopping-cart'></i></a>"
+                                                                // +"<a class='btn btn-primary btn-outline' id='btn-cart'>"
+                                                                +"<span class='glyphicon glyphicon-shopping-cart'></span>"
+                                                            +"<div class='marca' id="+list.id+" style='display: none;'></div>"
+                                                            +"<div class='modelo' id="+list.marca+" style='display: none;'></div>"
+                                                            +"<div class='precio' id="+list.marca+" style='display: none;'></div>";
                                                     +"</div>"
                                                 +"</div>"
                                             +"</div>"
@@ -54,7 +51,7 @@ $(document).ready(function(){
 
             var $div = $("#api_container");
             $div.html("");  
-            $.each(fideus, function(index, list) {
+            // $.each(fideus, function(index, list) {
               console.log(fideus['products']['0']['productFormats']['1']['assets']['0']['url']);
               var $row = $('<div class="row popular-car-gird">'
                             +'<div class="single-popular-car">'
@@ -81,7 +78,7 @@ $(document).ready(function(){
             $row.on("click", function() {
                 document.location = list.links.web;
             });
-        })
+        // })
         });
     });
 

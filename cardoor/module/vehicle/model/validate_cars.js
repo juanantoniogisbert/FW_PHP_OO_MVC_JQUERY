@@ -99,7 +99,7 @@ function validate_cars() {
     document.getElementById('error_motor').innerHTML = "";
 
     if (document.alta_cars.date_fabric.value===""){
-        document.getElementById('error_date_fabric').innerHTML = "Tiene que escribir el Motor del coche";
+        document.getElementById('error_date_fabric').innerHTML = "Tiene que escribir la fecha de fabricacion";
         document.alta_cars.date_fabric.focus();
         return 0;
     }
